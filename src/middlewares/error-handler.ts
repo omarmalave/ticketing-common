@@ -1,4 +1,5 @@
 import { NextFunction, Request, Response } from 'express';
+import pino from 'pino';
 import CustomError from '../errors/custom-error';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -7,6 +8,8 @@ export default (err: Error, req: Request, res: Response, next: NextFunction) => 
     return res.status(err.statusCode).send({ errors: err.serializeErrors() });
   }
 
+  const logger = pino();
+  logger.error(err);
   return res.status(500).send({
     errors: [{ message: 'Something went wrong' }],
   });
