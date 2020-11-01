@@ -1,9 +1,10 @@
 import jwt from 'jsonwebtoken';
-import { NextFunction, Request, Response} from 'express';
+import { NextFunction, Request, Response } from 'express';
+import pino from 'pino';
 
 interface UserPayload {
   id: string;
-  email: string
+  email: string;
 }
 
 declare global {
@@ -20,10 +21,14 @@ export default (req: Request, res: Response, next: NextFunction) => {
   }
 
   try {
-    req.currentUser = jwt.verify(req.session.jwt, process.env.JWT_KEY!) as UserPayload;
+    req.currentUser = jwt.verify(
+      req.session.jwt,
+      process.env.JWT_KEY!,
+    ) as UserPayload;
   } catch (err) {
-    console.log(err);
-  } // TODO: Put some logs n shit
+    const log = pino();
+    log.error(err);
+  }
 
   return next();
 };
