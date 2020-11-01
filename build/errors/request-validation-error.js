@@ -29,7 +29,10 @@ var RequestValidationError = /** @class */ (function (_super) {
         return _this;
     }
     RequestValidationError.prototype.serializeErrors = function () {
-        return this.errors.map(function (error) { return ({ message: error.msg, field: error.param }); });
+        return this.errors.map(function (error) { return ({
+            message: error.msg,
+            field: error.param,
+        }); });
     };
     return RequestValidationError;
 }(custom_error_1.default));

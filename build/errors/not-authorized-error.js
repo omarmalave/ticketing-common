@@ -22,12 +22,13 @@ var NotAuthorizedError = /** @class */ (function (_super) {
     function NotAuthorizedError() {
         var _this = _super.call(this, 'Not Authorized') || this;
         _this.statusCode = 401;
+        _this.reason = 'Not Authorized';
         // Because is extending builtin shit
         Object.setPrototypeOf(_this, NotAuthorizedError.prototype);
         return _this;
     }
     NotAuthorizedError.prototype.serializeErrors = function () {
-        return [{ message: 'Not authorized' }];
+        return [{ message: this.reason }];
     };
     return NotAuthorizedError;
 }(custom_error_1.default));

@@ -4,7 +4,7 @@ import BaseEvent from './events/base-event';
 export default abstract class Publisher<T extends BaseEvent> {
   abstract subject: T['subject'];
 
-  protected constructor(private client: Stan) {}
+  constructor(private client: Stan) {}
 
   publish(data: T['data']): Promise<void> {
     return new Promise((resolve, reject) => {

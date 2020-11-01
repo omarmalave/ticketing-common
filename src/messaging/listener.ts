@@ -11,7 +11,7 @@ export default abstract class Listener<T extends BaseEvent> {
 
   protected log = pino();
 
-  protected constructor(private client: Stan) {}
+  constructor(private client: Stan) {}
 
   abstract onMessage(data: T['data'], msg: Message): void;
 
