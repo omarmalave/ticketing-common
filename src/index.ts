@@ -15,3 +15,5 @@ export { default as Publisher } from './messaging/publisher';
 export { default as Subjects } from './messaging/subjects';
 export { default as TicketCreatedEvent } from './messaging/events/ticket-created-event';
 export { default as TicketUpdatedEvent } from './messaging/events/ticket-updated-event';
+
+export { default as OrderStatus } from './messaging/types/order-status';
