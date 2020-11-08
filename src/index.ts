@@ -16,6 +16,6 @@ export { default as Subjects } from './messaging/subjects';
 export { default as TicketCreatedEvent } from './messaging/events/ticket-created-event';
 export { default as TicketUpdatedEvent } from './messaging/events/ticket-updated-event';
 export { default as OrderCreatedEvent } from './messaging/events/order-created-event';
-export { default as OrderCancelleddEvent } from './messaging/events/order-cancelled-event';
+export { default as OrderCancelledEvent } from './messaging/events/order-cancelled-event';
 
 export { default as OrderStatus } from './messaging/types/order-status';
