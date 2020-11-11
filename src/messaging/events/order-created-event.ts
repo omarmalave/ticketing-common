@@ -9,6 +9,7 @@ export default interface OrderCreatedEvent extends BaseEvent {
     status: OrderStatus;
     userId: string;
     expiresAt: string;
+    version: number;
     ticket: {
       id: string;
       price: number;
