@@ -17,5 +17,6 @@ export { default as TicketCreatedEvent } from './messaging/events/ticket-created
 export { default as TicketUpdatedEvent } from './messaging/events/ticket-updated-event';
 export { default as OrderCreatedEvent } from './messaging/events/order-created-event';
 export { default as OrderCancelledEvent } from './messaging/events/order-cancelled-event';
+export { default as ExpirationCompleteEvent } from './messaging/events/expiration-complete-event';
 
 export { default as OrderStatus } from './messaging/types/order-status';
